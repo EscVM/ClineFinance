@@ -1,0 +1,74 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cline-finance"
+version = "1.0.0"
+description = "A high-quality MCP server that transforms Cline into a personal financial advisor"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.10"
+authors = [
+    {name = "Vittorio Mazzia"}
+]
+keywords = ["mcp", "finance", "cline", "portfolio", "investment"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Office/Business :: Financial :: Investment",
+]
+
+dependencies = [
+    "fastmcp>=0.1.0",
+    "yfinance>=0.2.40",
+    "fredapi>=0.5.0",
+    "pandas>=2.0.0",
+    "numpy>=1.24.0",
+    "requests>=2.31.0",
+    "matplotlib>=3.8.0",
+    "jinja2>=3.1.0",
+    "python-dateutil>=2.8.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-asyncio>=0.21.0",
+    "black>=23.0.0",
+    "isort>=5.12.0",
+    "mypy>=1.0.0",
+]
+
+[project.scripts]
+cline-finance = "cline_finance.server:main"
+
+[project.urls]
+Homepage = "https://github.com/vmazzia/ClineFinance"
+Documentation = "https://github.com/vmazzia/ClineFinance#readme"
+Repository = "https://github.com/vmazzia/ClineFinance"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+cline_finance = ["templates/*.html"]
+
+[tool.black]
+line-length = 100
+target-version = ["py310"]
+
+[tool.isort]
+profile = "black"
+line_length = 100
+
+[tool.mypy]
+python_version = "3.10"
+warn_return_any = true
+warn_unused_configs = true
+ignore_missing_imports = true

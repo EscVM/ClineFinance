@@ -1,0 +1,25 @@
+# ClineFinance - Python Dependencies
+# Install with: pip install -r requirements.txt
+
+# MCP Server Framework
+fastmcp>=0.1.0
+
+# Financial Data
+yfinance>=0.2.40
+fredapi>=0.5.0  # FRED economic data (optional - requires API key)
+
+# Data Processing
+pandas>=2.0.0
+numpy>=1.24.0
+
+# HTTP Requests
+requests>=2.31.0
+
+# Visualization
+matplotlib>=3.8.0
+
+# Report Generation
+jinja2>=3.1.0
+
+# Date Utilities
+python-dateutil>=2.8.0
